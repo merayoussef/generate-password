@@ -12,7 +12,6 @@ function promptPassword() {
   return options
 }
 
-
 function generatePassword() {
   //I choose a length of at least 8 characters and no more than 128 characters
   var options = promptPassword()
@@ -29,15 +28,11 @@ function generatePassword() {
   //var output = concat(uppercaseCharacters, specialCharacters, numericCharacters, lowercaseCharacters);
 }
 
+// Add event listener to generate button
+generateBtn.addEventListener("click", promptRequirements());
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+function promptRequirements() {
+ prompt("Would you like to include lowercase letters?")
 
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", promptPassword);
+ }
